@@ -1,0 +1,155 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<br><br>
+
+<style>
+.center {
+  margin: auto;
+  width: 50%;
+
+  padding: 10px;
+}
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+.styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+.observe   {
+	border-bottom: 1px solid #FFFF00;
+     background-color: #FFFF31;
+}
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+.styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
+
+</style>
+
+
+<div class="container" text>
+
+
+
+
+	</div>
+		<!-- Result -->
+		<div class="center">
+
+			<table class="styled-table" id="tbl">
+		<h1>Report of Patient</h1>
+
+		<thead>
+        <tr>
+            <th>Fields</th>
+            <th>Values</th>
+        </tr>
+    </thead>
+
+		<tbody>
+		<tr>
+	<td>Age</td><td>{{a0}}</td>
+	   </tr>
+
+		<tr>
+	<td >Sex</td><td>{{a1}}</td>
+		</tr>
+
+	<tr>
+	<td>Chest Pain Type</td><td>{{a2}}</td>
+	</tr>
+
+		<tr>
+	<td>Resting Blood Pressure in mm Hg</td><td>{{a3}}</td>
+		</tr>
+
+	<tr>
+	<td >Serum Cholestoral in mg/dl</td><td>{{a4}}</td>
+	</tr>
+
+	<tr>
+	<td >Resting ECG Results</td><td>{{a5}}</td>
+	</tr>
+
+	<tr>
+	<td >Maximum Heart Rate</td><td>{{a6}}</td>
+	</tr>
+
+		<tr>
+	<td>ST Depression Induced</td><td>{{a7}}</td>
+		</tr>
+	<tr>
+	<td>Exercise Induced Angina</td><td>{{a8}}</td>
+		</tr>
+
+		<tr>
+	<td>Slope of the Peak Exercise ST Segment</td><td>{{a9}}</td>
+		</tr>
+
+
+		<tr>
+	<td>Thalassemia</td><td>{{a10}}</td>
+		</tr>
+
+
+
+
+		<tr>
+
+		<td class="observe">Obesrvation</td><td class="observe">{{prediction_text}}</td>
+
+
+		</tr>
+		</tbody>
+
+
+
+</table>
+
+    <br >
+
+
+<button class="btn primary-button" style="color:white; background-color:black;" onclick="window.print()">Print this page</button>
+
+</div>
+
+
+
+
+
+
+		<!-- Result -->
+		<div class="center">
+			{% if prediction==1 %}
+				<h1>Prediction: <span class='danger'>Oops! You have Heart Disesase.</span></h1>
+				<img class="gif" src="{{ url_for('static', filename='sad_emoji.png') }}" alt="Image">
+			{% elif prediction==0 %}
+				<h1>Prediction: <span class='safe'>Great! You DON'T have Heart Disesase.</span></h1>
+				<img class="gif1" src="{{ url_for('static', filename='healthy.gif') }}" alt="Image">
+			{% endif %}
+		</div>
+
+{% endblock %}

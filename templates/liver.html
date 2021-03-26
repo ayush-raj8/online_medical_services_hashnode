@@ -1,0 +1,136 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<br>
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				<!-- Main -->
+<div class="container">
+    <h1 class="text-center">Liver Disease Prediction</h1>
+</div>
+
+ <div class="login">
+	
+<hr>
+
+     <!-- Main Input For Receiving Query to our ML -->
+   <!--Form-->
+			<form action = "{{url_for('predict_liver')}}" method ="POST" >
+
+
+        		<br>
+				  <div class="card card-body" >
+					  <div class="form-group  row">
+						<div class="col-sm-3">
+							<label for="age">Age</label>
+							<input class="form-control" type="number" id="age" name="age" required>
+						</div>
+
+						<div class="col-sm-3">
+							<label for="sex">Sex</label>
+							<select class="form-control" id="sex"  name="sex" required>
+							  <option disabled selected value> -- Select an Option -- </option>
+							  <option value = "0">Female(0)</option>
+							  <option value = "1">Male(1)</option>
+							</select>
+					   </div>
+					  </div>
+					  <br>
+					  <div class="form-group  row">
+						  <div class="col-sm">
+						  	<label for="Total_Bilirubin">Total Bilirubin</label>
+							<input  class="form-control" type="number" id="Total_Bilirubin" name="Total_Bilirubin" required>
+						  </div>
+						  <div class="col-sm">
+							<label for="Direct_Bilirubin">Direct Bilirubin</label>
+							<input t class="form-control" type="number" id="Direct_Bilirubin" name="Direct_Bilirubin"  required>
+						  </div>
+					</div>
+					<br>
+					
+						 <div class="form-group  row">
+						  <div class="col-sm">
+							<label for="Alkaline_Phosphotase">Alkaline Phosphotase</label>
+							<input  class="form-control" type="number" id="Alkaline_Phosphotase" name="Alkaline_Phosphotase" required>
+						  </div>
+
+						  <div class="col-sm">
+							<label for="Alamine_Aminotransferase">Alamine Aminotransferase</label>
+							<input class="form-control" type="number" id="Alamine_Aminotransferase" name="Alamine_Aminotransferase" required>
+						  </div>
+						  </div>
+					<br>
+						<div class="form-group  row">
+						  <div class="col-sm">
+							<label for="Aspartate_Aminotransferase">Aspartate Aminotransferase</label>
+							<input class="form-control" type="number" id="Aspartate_Aminotransferase" name="Aspartate_Aminotransferase" required>
+						  </div>
+						 
+						  <div class="col-sm">
+							<label for="Total_Protiens">Total Protiens</label>
+							<input  class="form-control" type="number" id="Total_Protiens" name=Total_Protiens required>
+						  </div>
+					  </div>
+					  
+					  <br>
+					  <div class="form-group row">
+							  <div class="col-sm">
+								<label for="Albumin">Albumin</label>
+								<input class="form-control"  type="number" id="Albumin" name="Albumin" required>
+							  </div>
+							  <div class="col-sm">
+								<label for="Albumin_and_Globulin_Ratio">Albumin and Globulin Ratio	</label>
+								<input  class="form-control" type="number" id="Albumin_and_Globulin_Ratio	" name="Albumin_and_Globulin_Ratio" required>
+							  </div>
+							 
+						  </div>
+						  
+					  
+
+					  <br>
+					  <div class="form-group">
+						<input class="btn-primary btn" type="submit" value="Result">
+					  </div>
+					  
+
+				     
+				  </div>
+				</form>
+			<hr>
+	 </div>
+
+
+
+				
+				
+
+				</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="static/js/jquery.min.js"></script>
+			<script src="static/js/jquery.scrollex.min.js"></script>
+			<script src="static/js/jquery.scrolly.min.js"></script>
+			<script src="static/js/browser.min.js"></script>
+			<script src="static/js/breakpoints.min.js"></script>
+			<script src="static/js/util.js"></script>
+			<script src="static/js/main.js"></script>
+			</div>
+	</body>
+</html>
+{% endblock %}

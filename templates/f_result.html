@@ -1,0 +1,233 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+
+
+<style>
+.center {
+  margin: auto;
+  width: 50%;
+
+  padding: 10px;
+}
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+.styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+.observe   {
+	border-bottom: 1px solid #FFFF00;
+     background-color: #FFFF31;
+}
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+.styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
+
+</style>
+
+
+<div class="container" text>
+
+
+
+
+	</div>
+		<!-- Result -->
+		<div class="center">
+
+			<table class="styled-table" id="tbl">
+		<h1>Report of Patient</h1>
+
+		<thead>
+        <tr>
+            <th>Fields</th>
+            <th>Values</th>
+        </tr>
+    </thead>
+
+		<tbody>
+		<tr>
+	<td>Baseline Value</td><td>{{a[0]}}</td>
+	   </tr>
+
+		<tr>
+	<td >Accelerations</td><td>{{a[1]}}</td>
+		</tr>
+
+	<tr>
+	<td>Fetal Movement</td><td>{{a[2]}}</td>
+	</tr>
+
+		<tr>
+	<td>Uterine Contractions</td><td>{{a[3]}}</td>
+		</tr>
+
+	<tr>
+	<td >Light Decelerations</td><td>{{a[4]}}</td>
+	</tr>
+
+	<tr>
+	<td >Severe Decelerations</td><td>{{a[5]}}</td>
+	</tr>
+
+	<tr>
+	<td >Prolongued Decelerations</td><td>{{a[6]}}</td>
+	</tr>
+
+		<tr>
+	<td>Abnormal Short Term Variability</td><td>{{a[7]}}</td>
+		</tr>
+	<tr>
+	<td>Mean Value of Short Term Variability</td><td>{{a[8]}}</td>
+		</tr>
+
+		<tr>
+	<td>Percentage of Time with Abnormal Long Term Variability</td><td>{{a[9]}}</td>
+		</tr>
+
+
+		<tr>
+	<td>Mean Value of Long Term Variability</td><td>{{a[10]}}</td>
+		</tr>
+
+
+
+        	<tr>
+	<td >Histogram Width</td><td>{{a[11]}}</td>
+	</tr>
+
+		<tr>
+	<td>Histogram Min</td><td>{{a[12]}}</td>
+		</tr>
+	<tr>
+	<td>Histogram Max</td><td>{{a[13]}}</td>
+		</tr>
+
+		<tr>
+	<td>Histogram Number of Peaks</td><td>{{a[14]}}</td>
+		</tr>
+
+
+		<tr>
+	<td>Histogram Number of Zeroes</td><td>{{a[15]}}</td>
+		</tr>
+	<tr>
+	<td >Histogram Mode</td><td>{{a[16]}}</td>
+	</tr>
+
+		<tr>
+	<td>Histogram Mean</td><td>{{a[17]}}</td>
+		</tr>
+	<tr>
+	<td>Histogram Median</td><td>{{a[18]}}</td>
+		</tr>
+
+		<tr>
+	<td>Histogram Variance</td><td>{{a[19]}}</td>
+		</tr>
+
+
+		<tr>
+	<td>Histogram Tendency</td><td>{{a[20]}}</td>
+		</tr>
+
+
+
+
+
+
+		<tr>
+
+		<td class="observe">Obesrvation</td><td class="observe">{{result}}</td>
+
+
+		</tr>
+		</tbody>
+
+
+
+</table>
+
+    <br >
+
+
+<button class="btn primary-button" style="color:white; background-color:black;" onclick="window.print()">Print this page</button>
+
+</div>
+
+
+
+
+
+
+		<!-- Result -->
+		<div class="center">
+			{% if prediction==1 %}
+				<h1>Prediction: <span class='safe'>You have Normal Fetus.</span></h1>
+				<img class="gif" src="{{ url_for('static', filename='healthy.gif') }}" alt="Image">
+			{% elif prediction==2 %}
+				<h1>Prediction: <span class='danger'>Fetus Heatlh : suspect</span></h1>
+				<img class="gif1" src="{{ url_for('static', filename='sad_emoji.png') }}" alt="Image">
+            {% elif prediction==3 %}
+				<h1>Prediction: <span class='danger'>Fetus Heatlh : Pathological</span></h1>
+				<img class="gif1" src="{{ url_for('static', filename='sad_emoji.png') }}" alt="Image">
+			{% endif %}
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+

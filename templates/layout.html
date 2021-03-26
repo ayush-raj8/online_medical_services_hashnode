@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Online Medical Checkup</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="static/style.css" rel="stylesheet">
+
+</head>
+
+<body class="gradient-background">
+
+
+
+
+
+
+
+
+
+  <style>
+  .center {
+		margin: auto;
+		width: 50%;
+		padding: 10px;
+	}
+body {
+  background: #f2f4f8;
+
+}
+
+</style>
+
+
+  <style >
+     .login {
+      max-width: 550px;
+      min-height: 460px;
+      padding: 20px 0;
+      margin: auto;
+      border-radius: 20px;
+      border: solid 1px #ccc;
+      box-shadow: 1px 2px 5px rgba(0,0,0,.31);
+      background: #ebebeb;
+
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      }
+
+      hr {
+      color: #1a0000;
+      opacity: 0.3;
+      }
+
+
+      .btn-block {
+      margin-top: 10px;
+      text-align: center;
+      }
+
+      button {
+      width: 50%;
+      padding: 5px 5px;
+      margin: auto;
+      border-radius: 20px;
+      background: #1c87c9;
+      font-size: 14px;
+      font-weight: 600;
+      color: #fff;
+      }
+      button:hover {
+      background: #26a9e0;
+      }
+      input[type=text]{
+      width: 100%;
+      padding: 10px 10px;
+
+      border-radius: 20px;
+      border: solid 1px #cbc9c9;
+      box-shadow: 1px 2px 5px rgba(0,0,0,.09);
+      background: #fff;
+      }
+
+
+      body, html {
+      height: 100%;
+      font-family: Montserrat-Regular, sans-serif;
+        }
+
+
+
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark shadow fixed-top">
+    <div class="container">
+      <a class="navbar-brand gl " href="{{ url_for('home') }}">Online Medical Checkup</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+
+            <a class="nav-link  gl" href="{{ url_for('home') }}">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link gl" href="{{ url_for('about') }}">About</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+<br>
+    <div class='container pb-5'>
+    {% block body %} {% endblock %}
+    </div>
+<br>
+  <br>
+
+
+
+    <style>
+
+.flex-wrapper {
+  display: flex;
+  flex-direction: column;
+
+
+background :coral
+}
+
+
+    html, body{ height:100%; margin:0; }
+header{ height:50px;}
+footer{ height:75px; background:black; }
+
+
+body{ 
+  display:flex; 
+  flex-direction:column;
+}
+
+footer{
+ 
+  margin-top:auto;
+ 
+}
+
+
+ .card h1 {
+    text-align: center;
+ }
+
+
+      </style>
+
+<footer>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <center>
+      <ul style="icon-effect icon-effect-1a">
+      <li style="display: inline;"><a href="https://www.linkedin.com/in/ayush-raj-3427b71ab/" style="color: white;" ><span class="fa fa-linkedin">  </span></a></li>
+      <li style="display: inline;"><a href="https://github.com/ayush-raj8" style="color: white;" ><span class="fa fa-github">  </span></a></li>
+        <li><p style="color: white;">Disclaimer : The models and results are strictly for educational pursposes only. </p></li>
+    </ul>
+  </center>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+         rel = "stylesheet">
+      <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+      <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+
+
+
+
+
+
+
+
+      <!-- Javascript -->
+      <script>
+         $(function() {
+            var availableTutorials = {{values1|tojson}};
+            $( "#one" ).autocomplete({
+               source: availableTutorials
+            });
+            $( "#one" ).autocomplete("option", "position",
+               { my : " top+30", at: "right top" })
+         });
+          $(function() {
+            var availableTutorials = {{values1|tojson}};
+            $( "#two" ).autocomplete({
+               source: availableTutorials
+            });
+            $( "#two" ).autocomplete("option", "position",
+               { my : "right-1 top+30", at: "right top" })
+         });
+          $(function() {
+            var availableTutorials = {{values1|tojson}};
+            $( "#three" ).autocomplete({
+               source: availableTutorials
+            });
+            $( "#three" ).autocomplete("option", "position",
+               { my : "right-1 top+30", at: "right top" })
+         });
+      </script>
+   </head>
+
+   <body>
+      <!-- HTML -->
+
+<br><br>
+
+
+<div class="login ">
+    <ol>
+    <h2>Symptoms of disease</h2>
+                <br><br><br>
+
+    <form action="{{ url_for('symppredict') }}" method="POST">
+
+      <div class = "ui-widget">
+         <label for = "one">Symptom 1 </label>
+         <input class="form-input" type="text" id = "one" name="one"  required>
+      </div>
+
+       <div class = "ui-widget">
+         <label for = "two">Symptom 2 </label>
+         <input class="form-input" type="text" id = "two" name="two"  required>
+      </div>
+
+
+        <div class = "ui-widget">
+         <label for = "three">Symptom 3</label>
+         <input class="form-input" type="text" id = "three" name="three"  required>
+      </div>
+
+
+        <input type="submit" class="btn-primary btn center" value="Submit">
+
+
+
+
+    </form>
+
+ </ol>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<br>
+
+
+
+  </body>
+
+
+{{pred}}
+
+
+
+{% endblock %}

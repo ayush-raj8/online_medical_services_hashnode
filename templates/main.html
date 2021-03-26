@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <!-- Bootstrap core CSS -->
+  <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="static/style.css" rel="stylesheet">
+    
+  <style>
+    html, body{ height:100%; margin:0; }
+header{ height:50px;}
+footer{ height:75px; background:black; }
+
+/* Trick */
+body{ 
+  display:flex; 
+  flex-direction:column;
+}
+
+footer{
+  padding:10px;
+  margin-top:auto;
+  margin-bottom: auto; 
+}
+  </style>
+
+</head>
+<body>
+
+	 <style>.center {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+  }
+
+
+
+</style>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark shadow fixed-top shadow fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="{{ url_for('home') }}">Online Medical Checkup</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+
+            <a class="nav-link" href="{{ url_for('home') }}">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('about') }}">About</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+	<br>
+<br>
+<br>
+<br>
+<main>
+	<div class="container-fluid" style="margin-bottom: 20px;">
+	{% block content %}
+
+	{% endblock %}
+    </div>
+  </main>
+  <footer>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <center>
+      <ul style="icon-effect icon-effect-1a">
+      <li style="display: inline;"><a href="https://www.linkedin.com/in/ayush-raj-3427b71ab/" style="color: white;" ><span class="fa fa-linkedin">  </span></a></li>
+      <li style="display: inline;"><a href="https://github.com/ayush-raj8" style="color: white;" ><span class="fa fa-github">  </span></a></li>
+
+        <li><p style="color: white;">Disclaimer : The models and results are strictly for educational pursposes only . </p></li>
+    </ul>
+  </center>
+  </footer>
+</body>
+</html>

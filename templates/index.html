@@ -1,0 +1,381 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<style>
+
+
+ .card h1 {
+    text-align: center;
+ }
+ .card:hover{
+    border: 2px solid black;
+    transform: translateY(2%);
+  box-shadow:
+    inset 0 0 60px whitesmoke,
+    inset 20px 0 80px #f0f,
+    inset -20px 0 80px #0ff,
+    inset 20px 0 300px #f0f,
+    inset -20px 0 300px #0ff,
+    0 0 50px #fff,
+    -10px 0 80px #f0f,
+    10px 0 80px #0ff;
+transition: all 0.3s ease;
+
+
+ }
+.mySlides {display:none;}
+
+
+
+
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="container">
+      <img class="card-img-top" src="/static/healthcheck.jpeg" alt="">
+    </div>
+  
+<br>
+ <h2 class="center"> Artificial Intelligence solutions</h2>
+<div class="container" style="  background: #808080;">
+  <br>
+  <br>
+    <div class="row">
+      <div class="col-md-4 mb-5">
+        <div class="card h-100">
+          <img class="card-img-top" src="{{ url_for('static', filename='diabetes.jpg') }}" width="160" height="200" alt="fetal image">
+          <div class="card-body">
+            <h4 class="card-title">Diabetes Prediction</h4>
+            <h6 class="card-text"></h6>
+          </div>
+          <div class="card-footer">
+            <a href="{{ url_for('diabetes') }}" class="btn btn-primary">Take Test!</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-5">
+        <div class="card h-100">
+          <img class="card-img-top" src="{{ url_for('static', filename='heart.png') }}" width="150" height="200" alt="heart image">
+          <div class="card-body">
+            <h4 class="card-title">Heart Disease Prediction</h4>
+            <h6 class="card-text"></h6>
+          </div>
+          <div class="card-footer">
+            <a href="{{ url_for('heart') }}" class="btn btn-primary">Take Test!</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-5">
+        <div class="card h-100">
+          <img class="card-img-top" src="{{ url_for('static', filename='fetal_image.jpeg') }}" width="150" height="200" alt="fetal image">
+          <div class="card-body">
+            <h4 class="card-title">Fetal Health Prediction</h4>
+            <h6 class="card-text"></h6>
+          </div>
+          <div class="card-footer">
+            <a href="/fetal_health" class="btn btn-primary">Take Test!</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<div class="row">
+<div class="col-md-4 mb-5">
+        <div class="card h-100">
+          <img class="card-img-top" src="{{ url_for('static', filename='liver.png') }}" width="150" height="200" alt="liver image">
+          <div class="card-body">
+            <h4 class="card-title">Liver Disease Prediction</h4>
+            <h6 class="card-text"></h6>
+          </div>
+          <div class="card-footer">
+            <a href="{{ url_for('liver') }}" class="btn btn-primary">Take Test!</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-5">
+        <div class="card h-100">
+          <img class="card-img-top" src="{{ url_for('static', filename='malaria.jpg') }}" alt="">
+          <div class="card-body">
+            <h4 class="card-title">Malaria Prediction</h4>
+            <h6 class="card-text"></h6>
+          </div>
+          <div class="card-footer">
+            <a href="{{ url_for('malaria') }}" class="btn btn-primary">Take Test!</a>
+          </div>
+        </div>
+      </div>
+
+
+     <div class="col-md-4 mb-5">
+        <div class="card h-100">
+          <img class="card-img-top" src="{{ url_for('static', filename='symptoms.jpeg') }}" alt="">
+          <div class="card-body">
+            <h4 class="card-title">Symptoms to Disease</h4>
+            <h6 class="card-text"></h6>
+          </div>
+          <div class="card-footer">
+            <a href="{{ url_for('symptoms') }}" class="btn btn-primary">Take Test!</a>
+          </div>
+        </div>
+      </div>
+
+
+
+ </div>
+</div>
+
+    <!-- /.row 
+    <div class="row">
+      <div class="col-md-4 mb-5">
+        <div class="card h-100">
+          <img class="card-img-top" src="{{ url_for('static', filename='malaria.jpg') }}" alt="">
+          <div class="card-body">
+            <h4 class="card-title">Malaria Prediction</h4>
+            <h6 class="card-text"></h6>
+          </div>
+          <div class="card-footer">
+            <a href="{{ url_for('heart') }}" class="btn btn-primary">Take Test!</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-5">
+        <div class="card h-100">
+          <img class="card-img-top" src="{{ url_for('static', filename='pneumonia.jpg') }}" alt="">
+          <div class="card-body">
+            <h4 class="card-title">Pneumonia Prediction</h4>
+            <h6 class="card-text"></h6>
+          </div>
+          <div class="card-footer">
+            <a href="{{ url_for('heart') }}" class="btn btn-primary">Take Test!</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 mb-5">
+        <div class="card h-100">
+          <img class="card-img-top" src="{{ url_for('static', filename='cancer_.png') }}" width="150" height="200" alt="">
+          <div class="card-body">
+            <h4 class="card-title">Cancer Prediction</h4>
+            <h6 class="card-text"></h6>
+          </div>
+          <div class="card-footer">
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+    -->
+<style>
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+}
+.testimonials-section {
+  background: linear-gradient(45deg,#ff9966 ,#ff5e62);
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.slider__nav {
+  width: 12px;
+  height: 12px;
+  margin: 80px 12px;
+  border-radius: 50%;
+  z-index: 10;
+  outline: 6px solid #ccc;
+  outline-offset: -6px;
+  box-shadow: 0 0 0 0 #333, 0 0 0 0 rgba(51, 51, 51, 0);
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.slider__nav:checked {
+  -webkit-animation: check 0.4s linear forwards;
+  animation: check 0.4s linear forwards;
+}
+.slider__nav:checked:nth-of-type(1) ~ .slider__inner {
+  left: 0%;
+}
+.slider__nav:checked:nth-of-type(2) ~ .slider__inner {
+  left: -100%;
+}
+.slider__nav:checked:nth-of-type(3) ~ .slider__inner {
+  left: -200%;
+}
+.slider__nav:checked:nth-of-type(4) ~ .slider__inner {
+  left: -300%;
+}
+.slider__nav:checked:nth-of-type(5) ~ .slider__inner {
+  left: -400%;
+}
+.slider__inner {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  width: 500%;
+  height: auto;
+  -webkit-transition: left 0.4s;
+  transition: left 0.4s;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+}
+.slider__contents {
+  height: 100%;
+  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-flex-flow: column nowrap;
+  -ms-flex-flow: column nowrap;
+  flex-flow: column nowrap;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.slider__caption {
+  font-size: 14px;
+  color: #111;
+  opacity: .5;
+  font-family: 'Roboto';
+  font-weight: bold;
+}
+.slider__txt {
+  font-size: 22px;
+  font-weight: bold;
+  font-family: 'Roboto';
+  line-height: 1.7;
+  color: #111;
+  margin-top: -20px;
+  margin-bottom: 20px;
+  max-width: 750px;
+}
+quote {
+  font-family: 'Arial';
+  font-weight: bold;
+  font-size: 100px;
+  color: #ec2027;
+  margin-bottom: 0;
+}
+
+@-webkit-keyframes check {
+  50% {
+    outline-color: #333;
+    box-shadow: 0 0 0 12px #333, 0 0 0 36px rgba(51, 51, 51, 0.2);
+  }
+  100% {
+    outline-color: #333;
+    box-shadow: 0 0 0 0 #333, 0 0 0 0 rgba(51, 51, 51, 0);
+  }
+}
+
+@keyframes check {
+  50% {
+    outline-color: #333;
+    box-shadow: 0 0 0 12px #333, 0 0 0 36px rgba(51, 51, 51, 0.2);
+  }
+  100% {
+    outline-color: #333;
+    box-shadow: 0 0 0 0 #333, 0 0 0 0 rgba(51, 51, 51, 0);
+  }
+}
+
+
+</style>
+<h2 class="center"> Top Quotes on Artificial Intelligence </h2>
+
+
+<div class="testimonials-section" >
+
+    <input type="radio" name="slider" title="slide1" checked="checked" class="slider__nav"/>
+    <input type="radio" name="slider" title="slide2" class="slider__nav"/>
+    <input type="radio" name="slider" title="slide3" class="slider__nav"/>
+    <input type="radio" name="slider" title="slide4" class="slider__nav"/>
+    <input type="radio" name="slider" title="slide5" class="slider__nav"/>
+  <div class="slider__inner"   >
+    <div class="slider__contents" >
+      <quote>&rdquo;</quote>
+      <p class="slider__txt">AI doesn’t have to be evil to destroy humanity – if AI has a goal and humanity just happens to come in the way, it will destroy humanity as a matter of course without even thinking about it, no hard feelings.</p>
+      <h2 class="slider__caption">Elon Musk , CEO of Tesla Motors.</h2>
+    </div>
+    <div class="slider__contents">
+      <quote>&rdquo;</quote>
+      <p class="slider__txt">Robots are not going to replace humans, they are going to make their jobs much more humane. Difficult, demeaning, demanding, dangerous, dull – these are the jobs robots will be taking.</p>
+      <h2 class="slider__caption">Sabine Hauert, Co-founder of Robohub.org</h2>
+    </div>
+    <div class="slider__contents">
+      <quote>&rdquo;</quote>
+      <p class="slider__txt">We're making this analogy that AI is the new electricity. Electricity transformed industries: agriculture, transportation, communication, manufacturing.</p>
+      <h2 class="slider__caption">Andrew Ng, Co-founder and lead of Google Brain</h2>
+    </div>
+    <div class="slider__contents">
+      <quote>&rdquo;</quote>
+      <p class="slider__txt">Artificial intelligence will reach human levels by around 2029. Follow that out further to, say, 2045, we will have multiplied the intelligence, the human biological machine intelligence of our civilization a billion-fold.</p>
+      <h2 class="slider__caption">Ray Kurzweil, American inventor and futurist.
+</h2>
+    </div>
+    <div class="slider__contents">
+      <quote>&rdquo;</quote>
+      <p class="slider__txt"> Some people call this artificial intelligence, but the reality is this technology will enhance us. So instead of artificial intelligence, I think we'll augment our intelligence.</p>
+      <h2 class="slider__caption">Ginni Rometty, CEO of IBM</h2>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+{% endblock %}  

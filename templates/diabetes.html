@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<br>
+
+<div class="container">
+    <h1 class="text-center">Diabetes Prediction</h1>
+</div>
+        <!-- Text Area -->
+    	<div class="login ">
+    		<form action="{{ url_for('predict_diabetes') }}" method="POST">
+                <br>
+
+                 <br>
+                <input class="form-input" type="number" required type="text" name="pregnancies" placeholder="Number of Pregnancies eg. 0"><br>
+
+                <input class="form-input" type="number" step="0.01" required type="text" name="glucose" placeholder="Glucose (mg/dL) eg. 87"><br>
+
+                <input class="form-input" type="number" step="0.01"required type="text" name="bloodpressure" placeholder="Blood Pressure (mmHg) eg. 90"><br>
+
+                <input class="form-input" type="number" step="0.01" required type="text" name="skinthickness" placeholder="Skin Thickness (mm) eg. 32"><br>
+
+                <input class="form-input" type="number" step="0.01" required type="text" name="insulin" placeholder="Insulin Level (IU/mL) eg. 80"><br>
+
+                <input class="form-input" type="number" step="0.01" required type="text" name="bmi" placeholder="Body Mass Index (kg/m²) eg. 21.5"><br>
+
+                <input class="form-input" type="number" step="0.01" required type="text" name="dpf" placeholder="Diabetes Pedigree Function eg. 0.62"><br>
+
+                <input class="form-input" type="number"  step="0.01" name="age" placeholder="Age (years) eg. 45"><br>
+
+        		<input type="submit" class="btn-primary btn" value="Submit">
+
+        	</form>
+    	</div>
+{% endblock %}

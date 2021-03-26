@@ -1,0 +1,116 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<br>
+<br>
+
+
+
+<div class="container">
+
+
+    <h1 class="text-center">Heart Disease Prediction</h1>
+</div>
+    	<div class="login">
+    		<form action="{{ url_for('predict_heart') }}" method="POST">
+                      		<br>
+				  <div class=" card-body" >
+					  <div class="form-group  row">
+						<div class="col-sm-3">
+							<label for="age">Age</label>
+							<input type="number" class="form-control" id="age" name="age" required>
+						</div>
+						<div class="col-sm-3">
+							<label for="sex">Sex</label>
+							<select class="form-control" id="sex"  name="sex" required>
+							  <option disabled selected value> -- Select an Option -- </option>
+							  <option value = "1">Male(1)</option>
+							  <option value = "0">Female(0)</option>
+							</select>
+					   </div>
+					  </div>
+					  <br>
+					  <div class="form-group  row">
+						  <div class="col-sm">
+							<label for="cp">Chest Pain Type</label>
+							<select class="form-control" id="cp" name = "cp" required>
+							  <option disabled selected value> -- Select an Option -- </option>
+							  <option value = "1">Typical Angina(1)</option>
+							  <option value = "2">Atypical Angina(2)</option>
+							  <option value = "3">Non-anginal Pain(3)</option>
+							  <option value = "4">Asymptomatic(4)</option>
+							</select>
+						  </div>
+						  <div class="col-sm">
+							<label for="trestbps">Resting Blood Pressure in mm Hg</label>
+							<input type="number" class="form-control" id="trestbps" name="trestbps"  required>
+						  </div>
+						  <div class="col-sm">
+							<label for="chol">Serum Cholestoral in mg/dl</label>
+							<input type="number" class="form-control" id="chol" name="chol" required>
+						  </div>
+
+					  </div>
+
+					  <br>
+					  <div class="form-group row">
+							<div class="col-sm">
+								<label for="restecg">Resting ECG Results </label>
+								<select class="form-control" id="restecg" name="restecg" required>
+								  <option disabled selected value> -- Select an Option -- </option>
+								  <option value = "0">Normal</option>
+								  <option value = "1">Having ST-T wave abnormality  </option>
+								  <option value = "2"> Probable or definite left ventricular hypertrophy  </option>
+								</select>
+							  </div>
+							  <div class="col-sm">
+								<label for="thalach">Maximum Heart Rate</label>
+								<input type="number" class="form-control" id="thalach" name="thalach" required>
+							  </div>
+							  <div class="col-sm">
+								<label for="exang">ST Depression Induced</label>
+								<input type="number" step="any" class="form-control" id="exang" name="exang" required>
+							  </div>
+							  <div class="col-sm">
+								<label for="exang">Exercise Induced Angina </label>
+								<select class="form-control" id="oldpeak" name="oldpeak" required>
+								  <option disabled selected value> -- Select an Option -- </option>
+								  <option value = "0">No(0)</option>
+								  <option value = "1">Yes(1)</option>
+								</select>
+							  </div>
+						  </div>
+						  <br>
+						  <div class="form-group  row">
+						  <div class="col-sm">
+							<label for="slope">Slope of the Peak Exercise ST Segment </label>
+							<select class="form-control" id="slope" name="slope" required>
+							  <option disabled selected value> -- Select an Option -- </option>
+							  <option value = "1">Upsloping</option>
+							  <option value = "2">Flat</option>
+							  <option value = "3">Downsloping</option>
+							</select>
+						  </div>
+
+						  <div class="col-sm">
+							<label for="thal">Thalassemia</label>
+							<select class="form-control" id="thal" name = "thal" required>
+							  <option disabled selected value> -- Select an Option -- </option>
+							  <option value = "3">Normal(3)</option>
+							  <option value = "6">Fixed defect(6)</option>
+							  <option value = "7">Reversable defect(7)</option>
+							</select>
+						  </div>
+					  </div>
+					  <br>
+
+
+				     </div>
+			 </fieldset>
+
+                <span ></span>
+        		<input type="submit" class="btn-primary btn" value="Predict">
+        	</form>
+    	</div>
+
+{% endblock %}
